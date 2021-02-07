@@ -1,4 +1,5 @@
 node {
+    git(branch: 'main',url: 'https://github.com/sankalp92/Jenkins_Pipeline_CICD.git')
     def jsonObj = readJSON file: 'Parameters.json'
     def build_tag_one = (jsonObj['is_rollback'] &&  !jsonObj['is_release']) ? jsonObj.Rollback : jsonObj.Release
     stage('Test') {
