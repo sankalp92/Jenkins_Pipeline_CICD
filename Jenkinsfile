@@ -1,5 +1,5 @@
 node {
-    def jsonObj = readJSON file: 'parameter.json'
+    def jsonObj = readJSON file: 'Parameter.json'
     def build_tag_one = (jsonObj['is_rollback'] &&  !jsonObj['is_release']) ? jsonObj.Rollback : jsonObj.Release
     stage('Test') {
       parallel payout: {
